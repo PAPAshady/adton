@@ -1,0 +1,124 @@
+@import 'tailwindcss';
+
+@theme {
+  /* Colors */
+  --color-ink: #0a0f1e;
+  --color-ink-800: #0f1626;
+  --color-ink-700: #141d33;
+  --color-ink-600: #1c2a46;
+  --color-ink-500: #28395c;
+  --color-gold-300: #ffdd8a;
+  --color-gold-400: #ffc94d;
+  --color-gold-500: #f5b301;
+  --color-gold-600: #cc8e00;
+  --color-teal-300: #8cf2e6;
+  --color-teal-400: #4fe1d2;
+  --color-teal-500: #22c7b8;
+  --color-teal-600: #149488;
+  --color-paper: #f4f6fb;
+  --color-mist: #9aa9c7;
+
+  /* Fonts */
+  --font-primary: Vazirmatn, sans-serif;
+
+  /* Shadows */
+  --shadow-soft: 0 24px 55px -18px rgba(4, 8, 20, 0.6);
+  --shadow-card: 0 16px 40px -20px rgba(4, 8, 20, 0.55);
+  --shadow-glow-gold: 0 14px 34px -12px rgba(245, 179, 1, 0.35);
+  --shadow-glow-teal: 0 14px 34px -12px rgba(34, 199, 184, 0.3);
+  --shadow-button-primary:
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.35), 0 12px 28px -10px rgba(245, 179, 1, 0.45);
+  --shadow-button-secondary: inset 0 1px 0 0 rgba(255, 255, 255, 0.06);
+
+  /* Animations */
+  --animate-drift: drift 9s ease-in-out infinite;
+  --animate-drift-slow: driftSlow 13s ease-in-out infinite;
+  --animate-float-card: floatCard 6s ease-in-out infinite;
+  --animate-pulse-soft: pulseSoft 2.2s ease-in-out infinite;
+  --animate-marquee: marquee 28s linear infinite;
+}
+
+@keyframes drift {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(18px, -22px);
+  }
+}
+
+@keyframes driftSlow {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-24px, 16px);
+  }
+}
+
+@keyframes floatCard {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(-2deg);
+  }
+  50% {
+    transform: translateY(-14px) rotate(-1deg);
+  }
+}
+
+@keyframes pulseSoft {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.55;
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(50%);
+  }
+}
+
+@utility bg-grid-glow {
+  background: radial-gradient(
+    60% 50% at 50% 0%,
+    rgba(34, 199, 184, 0.16) 0%,
+    rgba(10, 15, 30, 0) 70%
+  );
+}
+
+@utility bg-gold-glow {
+  background: radial-gradient(
+    45% 45% at 50% 50%,
+    rgba(245, 179, 1, 0.25) 0%,
+    rgba(10, 15, 30, 0) 70%
+  );
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #818181;
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-track {
+  background: #2c2c2c;
+  border-radius: 2px;
+  border: 1px solid #818181;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #818181 #2c2c2c;
+}
